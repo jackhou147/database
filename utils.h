@@ -1,9 +1,9 @@
 //
-// Created by Jack Hou on 2019-05-02.
+// Created by Jack Hou on 2019-05-21.
 //
 
-#ifndef BTREE_UTILS_H
-#define BTREE_UTILS_H
+#ifndef DATABASE_UTILS_H
+#define DATABASE_UTILS_H
 
 #include "iostream"
 #include "vector"
@@ -20,14 +20,14 @@ const int DEBUG = true;
 /// @tparam T
 /// @param print_me
 template <class T>
-void dprint(T print_me)
+inline void dprint(T print_me)
 {
     if(DEBUG)
         cout << endl << print_me << endl;
 }
 
 template <class S>
-void shift_right(S*& arr, int& size, int index)
+inline void shift_right(S*& arr, int& size, int index)
 {
     assert(index <= size);
     if((index == size))
@@ -55,7 +55,7 @@ void shift_right(S*& arr, int& size, int index)
 }
 
 template <class S>
-void insert_to_array(S*& arr, int& size, S item, int i=-1)
+inline void insert_to_array(S*& arr, int& size, S item, int i=-1)
 {
     if(i==-1)   //assume inserting to last spot!
     {
@@ -69,7 +69,7 @@ void insert_to_array(S*& arr, int& size, S item, int i=-1)
     }
 }
 
-int Random(int lo, int hi)
+inline int Random(int lo, int hi)
 {
     int r = rand()%(hi-lo+1)+lo;
 
@@ -77,7 +77,7 @@ int Random(int lo, int hi)
 }
 
 template <class T>
-void print_vector(const vector<T>& v, ostream& os = cout)
+inline void print_vector(const vector<T>& v, ostream& os = cout)
 {
     os << "[";
     for (auto i = v.begin(); i != v.end(); ++i)
@@ -86,14 +86,14 @@ void print_vector(const vector<T>& v, ostream& os = cout)
 }
 
 template <typename T>
-ostream& operator<<(ostream& os, const vector<T>& v)
+inline ostream& operator<<(ostream& os, const vector<T>& v)
 {
     print_vector(v,os);
     return os;
 }
 
 template <typename T>
-vector<T>& operator+=(vector<T>& lhs, const T& newItem)
+inline vector<T>& operator+=(vector<T>& lhs, const T& newItem)
 {
     lhs.push_back(newItem);
     return lhs;
@@ -107,7 +107,7 @@ vector<T>& operator+=(vector<T>& lhs, const T& newItem)
 /// @param item
 /// @return -1 if not found.
 template <class T>
-int find_in_arr(T* arr, int size, T item)
+inline int find_in_arr(T* arr, int size, T item)
 {
     int answer = -1;
     for(int i=0; i<size; i++)
@@ -124,7 +124,7 @@ int find_in_arr(T* arr, int size, T item)
 /// @param size
 /// @param item
 template <class T>
-void remove_from_arr(T*& arr, int& size, T item)
+inline void remove_from_arr(T*& arr, int& size, T item)
 {
     int i=find_in_arr(arr, size,item);
     if(i==-1) return;   //not found.
@@ -137,13 +137,13 @@ void remove_from_arr(T*& arr, int& size, T item)
 /// @brief return if n is an odd number
 /// @param n
 /// @return
-bool odd(int n)
+inline bool odd(int n)
 {
     return (n%2 != 0);
 }
 
 template<class T>
-void split_arr(T*& src, int& src_size, T*& dest, int& dest_size)
+inline void split_arr(T*& src, int& src_size, T*& dest, int& dest_size)
 {
     if(src_size==0) return; //there's nothing to split if it's an empty array.
 
@@ -170,7 +170,7 @@ void split_arr(T*& src, int& src_size, T*& dest, int& dest_size)
 /// @param dest_size
 /// @note: not tested.
 template <class T>
-void even_split(T*& src, int& src_size, T*&dest, int&dest_size)
+inline void even_split(T*& src, int& src_size, T*&dest, int&dest_size)
 {
     //--------------
     bool odd= bool(src_size%2);
@@ -185,7 +185,7 @@ void even_split(T*& src, int& src_size, T*&dest, int&dest_size)
 
 
 template <class T>
-void print_array(T* arr, int size, ostream& outs = cout, bool newLine = true)
+inline void print_array(T* arr, int size, ostream& outs = cout, bool newLine = true)
 {
     outs << "[";
     for(int i=0; i<size; i++)
@@ -199,7 +199,7 @@ void print_array(T* arr, int size, ostream& outs = cout, bool newLine = true)
     if(newLine) outs << endl;
 }
 
-void read_int_array(int*& arr, int& size, ifstream& in)
+inline void read_int_array(int*& arr, int& size, ifstream& in)
 {
     //read in an integer array
     //[1,2,3]
@@ -230,7 +230,7 @@ void read_int_array(int*& arr, int& size, ifstream& in)
 /// @param fileName
 /// @return
 template <class T>
-bool print_arr_to_file(T* arr, int size, const string& fileName)
+inline bool print_arr_to_file(T* arr, int size, const string& fileName)
 {
     ofstream myFile(fileName);
     if(!myFile.is_open()) return false;
@@ -238,7 +238,7 @@ bool print_arr_to_file(T* arr, int size, const string& fileName)
     return true;
 }
 
-bool read_int_arr_from_file(int*& arr, int& size, const string& fileName)
+inline bool read_int_arr_from_file(int*& arr, int& size, const string& fileName)
 {
     ifstream myFile(fileName);
     if(!myFile.is_open()) return false;
@@ -254,7 +254,7 @@ bool read_int_arr_from_file(int*& arr, int& size, const string& fileName)
 /// @param low
 /// @param high
 /// @return
-int* get_int_array(int how_many, int low, int high)
+inline int* get_int_array(int how_many, int low, int high)
 {
     int size = 0;
     int* arr = new int[how_many];
@@ -271,7 +271,7 @@ int* get_int_array(int how_many, int low, int high)
 /// @brief print a boolean as true/false
 /// @param print_me
 /// @param outs
-void print_bool(bool print_me, ostream& outs= cout)
+inline inline void print_bool(bool print_me, ostream& outs= cout)
 {
     if(print_me) outs << "TRUE";
     else outs << "FALSE";
@@ -280,7 +280,7 @@ void print_bool(bool print_me, ostream& outs= cout)
 
 /// @brief print out an endl
 /// @param outs
-void newLine(ostream& outs = cout)
+inline void newLine(ostream& outs = cout)
 {
     outs << endl;
 };
@@ -290,7 +290,7 @@ void newLine(ostream& outs = cout)
 /// @brief print out "======"+title
 /// @param title
 /// @param outs
-void divider(const string& title="", ostream& outs = cout)
+inline void divider(const string& title="", ostream& outs = cout)
 {
     newLine(outs);
     for(int i=0; i<25; i++) cout << "=";
@@ -300,7 +300,7 @@ void divider(const string& title="", ostream& outs = cout)
 }
 
 template <class T>
-void copy_array(T dest[], const T src[],
+inline void copy_array(T dest[], const T src[],
                 int& dest_size, int src_size)
 {
     for(int i=0; i<src_size; i++)
@@ -309,7 +309,7 @@ void copy_array(T dest[], const T src[],
 }//copy src[] into dest[]
 
 template <class S>
-void shift_left(S*& arr, int& size, int index)
+inline void shift_left(S*& arr, int& size, int index)
 {
     if(!size) return;
     int i;
@@ -320,7 +320,7 @@ void shift_left(S*& arr, int& size, int index)
     size --;
 }
 template <class T>
-void delete_item(T data[ ], int i, int& n, T& entry)
+inline void delete_item(T data[ ], int i, int& n, T& entry)
 {
     entry = data[i];
     shift_left(data,n,i);
@@ -335,7 +335,7 @@ void delete_item(T data[ ], int i, int& n, T& entry)
 /// @param item
 /// @return true if found; or false.
 template <class T>
-bool found_in_array(int*& arr, int size, T item)
+inline bool found_in_array(int*& arr, int size, T item)
 {
     for(int i=0; i<size; i++)
         if(arr[i] == item)  //found!
@@ -352,7 +352,7 @@ bool found_in_array(int*& arr, int size, T item)
 /// @param from_size
 /// @example [1,2,3] and [4,5] becomes [1,2,3,4,5] and []
 template <class T>
-void merge_arrays(T*& to, int& to_size, T*& from, int& from_size)
+inline void merge_arrays(T*& to, int& to_size, T*& from, int& from_size)
 {
     for(int i=0; i<from_size; i++){
         insert_to_array(to, to_size, from[i], to_size); //push to the end of first array
@@ -366,7 +366,7 @@ void merge_arrays(T*& to, int& to_size, T*& from, int& from_size)
 /// @param size
 /// @return
 template <class T>
-bool is_sorted_ascending(T* arr, int size)
+inline bool is_sorted_ascending(T* arr, int size)
 {
     for(int i=0; i<size-1; i++)
         if(arr[i] > arr[i+1]) return false;
@@ -379,7 +379,7 @@ bool is_sorted_ascending(T* arr, int size)
 /// @param size
 /// @return
 template <class T>
-bool is_sorted_descending(T* arr, int size)
+inline bool is_sorted_descending(T* arr, int size)
 {
     for(int i=0; i<size-1; i++)
     {
@@ -395,4 +395,4 @@ bool is_sorted_descending(T* arr, int size)
 
 
 
-#endif //BTREE_UTILS_H
+#endif //DATABASE_UTILS_H

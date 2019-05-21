@@ -1,9 +1,9 @@
 //
-// Created by Jack Hou on 2019-05-01.
+// Created by Jack Hou on 2019-05-21.
 //
 
-#ifndef BTREE_MAP_H
-#define BTREE_MAP_H
+#ifndef DATABASE_MAP_H
+#define DATABASE_MAP_H
 
 #include "BPlusTree.h"
 #include "Pair.h"
@@ -53,4 +53,5 @@ private:
 };
 
 
-#endif //BTREE_MAP_H
+
+#endif //DATABASE_MAP_H

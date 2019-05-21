@@ -1,5 +1,10 @@
-#ifndef STOKENIZER_H
-#define STOKENIZER_H
+//
+// Created by Jack Hou on 2019-05-21.
+//
+
+#ifndef DATABASE_STOKENIZER_H
+#define DATABASE_STOKENIZER_H
+
 #include <string>
 #include <iostream>
 #include "constants.h"
@@ -64,4 +69,5 @@ private:
     int _table[MAX_HEIGHT][MAX_WIDTH];
 };
 
-#endif // STOKENIZER_H
+
+#endif //DATABASE_STOKENIZER_H

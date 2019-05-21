@@ -2,8 +2,8 @@
 // Created by Jack Hou on 2019-05-01.
 //
 
-#ifndef BTREE_PAIR_H
-#define BTREE_PAIR_H
+#ifndef DATABASE_PAIR_H
+#define DATABASE_PAIR_H
 
 #include "ostream"
 using namespace std;
@@ -61,4 +61,4 @@ public:
 };
 
 
-#endif //BTREE_PAIR_H
+#endif //DATABASE_PAIR_H

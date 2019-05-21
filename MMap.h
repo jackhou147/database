@@ -1,9 +1,10 @@
 //
-// Created by Jack Hou on 2019-05-02.
+// Created by Jack Hou on 2019-05-21.
 //
 
-#ifndef BTREE_MULTIMAP_H
-#define BTREE_MULTIMAP_H
+#ifndef DATABASE_MMAP_H
+#define DATABASE_MMAP_H
+
 
 #include "BPlusTree.h"
 #include "MPair.h"
@@ -112,5 +113,4 @@ private:
     BPlusTree<MPair<K, V> > mmap;
 };
 
-
-#endif //BTREE_MULTIMAP_H
+#endif //DATABASE_MMAP_H

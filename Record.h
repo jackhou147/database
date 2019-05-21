@@ -53,7 +53,9 @@ private:
     int recno;
 
     /// @brief array of char arrays like this: {"john", "Doe", "35"}
-    char* record[MAX][];
+    char* record[MAX][MAX_ROWS];
+
+
 };
 
 

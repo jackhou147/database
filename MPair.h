@@ -1,9 +1,10 @@
 //
-// Created by Jack Hou on 2019-05-02.
+// Created by Jack Hou on 2019-05-21.
 //
 
-#ifndef BTREE_MPAIR_H
-#define BTREE_MPAIR_H
+#ifndef DATABASE_MPAIR_H
+#define DATABASE_MPAIR_H
+
 
 #include "ostream"
 #include "vector"
@@ -93,4 +94,4 @@ struct MPair{
 };
 
 
-#endif //BTREE_MPAIR_H
+#endif //DATABASE_MPAIR_H

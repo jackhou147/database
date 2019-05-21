@@ -1,8 +1,13 @@
-#ifndef TOKEN_H
-#define TOKEN_H
-#include <string>
+//
+// Created by Jack Hou on 2019-05-21.
+//
+
+#ifndef DATABASE_TOKEN_H
+#define DATABASE_TOKEN_H
+
+#include "string"
+#include "iostream"
 #include "constants.h"
-#include <iostream>
 using namespace std;
 
 
@@ -54,4 +59,5 @@ private:
     string _token;
     int _type;
 };
-#endif // TOKEN_H
+
+#endif //DATABASE_TOKEN_H

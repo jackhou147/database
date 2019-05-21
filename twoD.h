@@ -1,5 +1,10 @@
-#ifndef TWOD_H
-#define TWOD_H
+//
+// Created by Jack Hou on 2019-05-21.
+//
+
+#ifndef DATABASE_TWOD_H
+#define DATABASE_TWOD_H
+
 #include <iostream>
 using namespace std;
 namespace _2dArr
@@ -108,5 +113,4 @@ namespace _2dArr
 
 
 
-
-#endif
+#endif //DATABASE_TWOD_H
