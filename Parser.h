@@ -9,6 +9,7 @@
 #include "Map.h"
 #include "stokenizer.h"
 #include "string"
+#include "constants.h"
 
 /**
  * @brief Parser takes a string as input, and generates a Multimap of string/string pairs.
@@ -62,9 +63,7 @@ public:
     MMap<string,string> get_parse_tree();
 
 private:
-    /// @brief: to be used in combination with keyword map
-    /// to assign a number to each keyword.
-    enum _Keys {ZERO, SELECT, FROM, STAR };
+
 
     /// @example keyword["SELECT"] = SELECT
     Map<string, int> _keyword;

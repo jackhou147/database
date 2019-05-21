@@ -37,17 +37,20 @@ public:
     string type_string()
     {
         switch (_type) {
-            case TYPES::ALPHA:
+            case _Keys::SELECT:
                 return "ALPHA";
                 break;
-            case TYPES::NUMBER:
-                return "NUMBER";
+            case _Keys::ZERO:
+                return "ZERO";
                 break;
-            case TYPES::UNKNOWN:
+            case _Keys::FROM:
+                return "FROM";
+                break;
+            case _Keys::STAR:
+                return "*";
+                break;
+            case _Keys::UNKNOWN:
                 return "UNKNOWN";
-                break;
-            case TYPES::SPACE:
-                return "SPACE";
                 break;
             default:
                 break;
