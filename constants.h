@@ -13,10 +13,14 @@ const int ALPHA_STATE = 20;
 const int SPACE_STATE = 40;
 const int UNKNOWN_STATE = 60;
 
+enum TYPES{ALPHA, NUMBER, SPACE, UNKNOWN};
+
+
+
 
 /// @brief: to be used in combination with keyword map
 /// to assign a number to each keyword.
-enum _Keys {ZERO, SELECT, FROM, STAR, UNKNOWN };
+enum _Keys {ZERO, SELECT, FROM, STAR, UNRECOGNIZED};
 
 
 #endif // CONSTANTS_H

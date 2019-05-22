@@ -49,8 +49,8 @@ public:
             case _Keys::STAR:
                 return "*";
                 break;
-            case _Keys::UNKNOWN:
-                return "UNKNOWN";
+            case _Keys::UNRECOGNIZED:
+                return "UNRECOGNIZED";
                 break;
             default:
                 break;

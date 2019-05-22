@@ -1,16 +1,11 @@
-//
-// Created by Jack Hou on 2019-05-21.
-//
-
-#ifndef DATABASE_STOKENIZER_H
-#define DATABASE_STOKENIZER_H
-
+#ifndef STOKENIZER_H
+#define STOKENIZER_H
 #include <string>
 #include <iostream>
 #include "constants.h"
 #include "token.h"
-#include "twoD.h"
 #include <sstream>
+#include "twoD.h"
 using namespace std;
 
 class STokenizer
@@ -70,5 +65,4 @@ private:
     int _table[MAX_HEIGHT][MAX_WIDTH];
 };
 
-
-#endif //DATABASE_STOKENIZER_H
+#endif // STOKENIZER_H
