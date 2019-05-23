@@ -14,7 +14,7 @@ class Map {
 public:
 
     Map():key_count(0){
-
+        _map = BPlusTree<Pair<k,v>>();
     }
 
 

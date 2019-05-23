@@ -15,7 +15,7 @@ class Token
 {
 public:
 
-    Token();
+    Token(){;}
     Token(string str, int type):_token(str),_type(type){}
     friend ostream& operator <<(ostream& outs, const Token& t)
     {
@@ -37,20 +37,17 @@ public:
     string type_string()
     {
         switch (_type) {
-            case _Keys::SELECT:
+            case TYPES::ALPHA:
                 return "ALPHA";
                 break;
-            case _Keys::ZERO:
-                return "ZERO";
+            case TYPES::NUMBER:
+                return "NUMBER";
                 break;
-            case _Keys::FROM:
-                return "FROM";
+            case TYPES::UNKNOWN:
+                return "UNKNOWN";
                 break;
-            case _Keys::STAR:
-                return "*";
-                break;
-            case _Keys::UNRECOGNIZED:
-                return "UNRECOGNIZED";
+            case TYPES::SPACE:
+                return "SPACE";
                 break;
             default:
                 break;

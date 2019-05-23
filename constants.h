@@ -1,6 +1,9 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
+#include "vector"
+#include "string"
+using namespace std;
 //enum TYPES{ALPHA, NUMBER, SPACE, UNKNOWN};
 
 const int MAX_TOKEN_LENGTH = 100;
@@ -20,7 +23,6 @@ enum TYPES{ALPHA, NUMBER, SPACE, UNKNOWN};
 
 /// @brief: to be used in combination with keyword map
 /// to assign a number to each keyword.
-enum _Keys {ZERO, SELECT, FROM, STAR, UNRECOGNIZED};
-
+enum _Keys {ZERO, SELECT, STAR, FROM, SYMBOL};
 
 #endif // CONSTANTS_H

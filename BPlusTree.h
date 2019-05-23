@@ -134,8 +134,9 @@ public:
 //            B I G T H R E E
 //---------------------------------------------------------------------
     explicit BPlusTree(bool dup=false):dups_ok(dup), key_count(0), child_count(0), next(NULL){
-
-        ;}
+        keys = new T[ORDER-1];
+        children = new BPlusTree*[ORDER]
+    ;}
 
     /// @brief initialize with an array
     /// @param arr
@@ -193,17 +194,18 @@ public:
     BPlusTree<T>&operator =(const BPlusTree<T>& other)
     {
         // clean up the array of pointers
-        for(int i=0; i<child_count; i++)
-            delete children[i];
+//        for(int i=0; i<child_count; i++)
+//            delete children[i];
 
         // copying from others
-        dups_ok = other.dups_ok;
-        key_count = other.key_count;
-        child_count = other.child_count;
-        for(int i=0; i<key_count; i++)
-            keys[i] = other.keys[i];
-        for(int i=0; i<child_count; i++)
-            children[i] = other.children[i];
+        return *(copy_tree(other));
+//        dups_ok = other.dups_ok;
+//        key_count = other.key_count;
+//        child_count = other.child_count;
+//        for(int i=0; i<key_count; i++)
+//            keys[i] = other.keys[i];
+//        for(int i=0; i<child_count; i++)
+//            children[i] = other.children[i];
     }
 
 
@@ -533,9 +535,7 @@ BPlusTree<T> * BPlusTree<T>::copy_tree(const BPlusTree<T> &other)
             rightMostNode->next = leftMostNode;
         rightMostNode = temp->get_biggest_node();
     }
-
-
-
+    return this;
 
 }
 

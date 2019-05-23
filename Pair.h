@@ -43,6 +43,12 @@ public:
         return (lhs == rhs) || (lhs > rhs);
     }
 
+    Pair& operator =(const Pair& other)
+    {
+        _key = other._key;
+        _value = other._value;
+        return *this;
+    }
 
 
 
